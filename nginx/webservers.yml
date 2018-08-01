@@ -1,0 +1,9 @@
+---
+# This playbook deploys an nginx server
+
+- name: deploy an nginx server
+  hosts: webservers
+  become: true
+  
+  roles:
+    - web

@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: no
+
+  vars:
+    - config: "{{ playbook_dir }}/config.json"
+  tasks:
+    - name: Gather facts about all Enclosures
+      oneview_enclosure_facts:
+        config: "{{ config }}"
+      delegate_to: localhost
+
+    - debug: var=enclosures
